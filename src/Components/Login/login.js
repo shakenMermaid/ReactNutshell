@@ -17,7 +17,7 @@ export default class Login extends Component {
     }
 
     // postNewUser(){
-    //         const newAccount = sessionStorage.getItem(email.value)
+    //         const newAccount = sessionStorage.getItem("credentials")
     //         fetch("http://localhost:8088/Accounts",{
     //         method:"POST",
     //         headers:{
@@ -31,20 +31,23 @@ export default class Login extends Component {
     //     fetch ("http://localhost:8088/Accounts")
     //     .then(accounts => accounts.json())
     //     .then(parsedAccounts => {
-    //         const accounts= parsedAccounts.find((Account)=>
-    //         {this.state.email === Account.email
-    //         && this.state.password === Accounts.password})
-    //         if (accounts){
-    //             localStorage.setItem("credentials", JSON.stringify(accounts))
-    //         } else {
-    //             postNewUser()
-    //             localStorage.setItem("credentials",)
-    //         }
+    //         const accounts = parsedAccounts.find((Account)=>
+    //         this.state.email === Account.email
+    //         && this.state.password === Account.password
+    //         )
 
-
-    //     })
-    //     )
+    //     }
+    //     ))
     // }
+
+
+    // //         .then(console.log)
+    // //         if (accounts){
+    // //             localStorage.setItem("credentials", JSON.stringify(accounts))
+    // //         } else {alert("You are not logged in.")}
+    // //     })
+    // //     )
+    // // }
     handleLogin = (e) => {
         e.preventDefault()
 
@@ -56,7 +59,8 @@ export default class Login extends Component {
             "credentials",
             JSON.stringify({
                 email: this.state.email,
-                password: this.state.password
+                // password: this.state.password
+                id: this.state.id
             })
         )
     }
@@ -80,9 +84,10 @@ export default class Login extends Component {
                        id="password"
                        placeholder="Password"
                        required="" />
-                <button type="submit" onClick={ this.validateEmail}>
-                    Sign in
+                <button type="submit" onClick={() =>  {console.log(" NEW FRIEND!")}}>
+                    Register
                 </button>
+                <button type="submit" onClick={() => {console.log(" Signin")}}> Login </button>
             </form>
         )
     }
