@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { Component } from "react"    
 import "./login.css"
 
 export default class Login extends Component {
@@ -60,7 +60,7 @@ export default class Login extends Component {
             JSON.stringify({
                 email: this.state.email,
                 // password: this.state.password
-                id: ""
+                id: this.state.id
             })
         )
     }
