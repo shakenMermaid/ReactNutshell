@@ -5,15 +5,16 @@ import MessagesApp from "./Messages/MessagesApp"
 
  export default class ApplicationView extends Component {
      isAuthenticated = () => sessionStorage.getItem("credentials") !== null
+
  render() {
      return (
         <React.Fragment>
-            <Route path="/" component={Login} />
+            <Route path="/login" component={Login} />
             <Route path="/messages" render={() => {
                 if (this.isAuthenticated()) {
                     return <MessagesApp />
                 } else {
-                    return <Redirect to="/" />
+                    return <Redirect to="/login" />
                 }
             }} />
         </React.Fragment>
