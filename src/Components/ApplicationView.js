@@ -9,7 +9,7 @@ import MessagesApp from "./Messages/MessagesApp"
  render() {
      return (
         <React.Fragment>
-            <Route path="/login" component={Login} />
+            <Route path="/login" component= {Login} />
             <Route path="/messages" render={() => {
                 if (this.isAuthenticated()) {
                     return <MessagesApp />
