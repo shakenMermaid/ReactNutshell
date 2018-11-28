@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import {Route, Redirect} from 'react-router-dom'
 import './App.css';
-import MessagesApp from './Messages/MessagesApp'
-import Login from "./Login/login"
 import NavBar from "./NavBar/NavBar"
+import ApplicationView from "./ApplicationView"
 
 
 class App extends Component {
@@ -15,14 +13,7 @@ class App extends Component {
         <NavBar />
         <br></br>
         <br></br>
-        <Route path="/" component={Login} />
-        <Route path="/messages" render={() => {
-              if (this.isAuthenticated()) {
-                return <MessagesApp />
-            } else {
-                return <Redirect to="/" />
-            }
-        }} />
+        <ApplicationView />
       </React.Fragment>
 
     )
