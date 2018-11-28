@@ -60,7 +60,7 @@ export default class Login extends Component {
             JSON.stringify({
                 email: this.state.email,
                 // password: this.state.password
-                id: this.state.id
+                id: ""
             })
         )
     }
